@@ -1,0 +1,25 @@
+pip install --pre python-docx
+#to open a new document
+from docx import Document
+?
+#to open a exisitng document
+document=Document('jkt.docx')
+?
+#to open a file-like document
+f = open('jkt.docx','rb') #read binary - rb
+document= Document(f)
+f.close()
+?
+document.paragraphs
+document.paragraphs[2].text #gives the text
+?
+document.paragraphs
+for par in document.paragraphs:
+  print(par.text)
+for par in document.paragraphs:  # to extract the whole text
+  if (('igsa') in par.text):
+     print(par.text)
+a=input("Enter a word you want to search")
+for i in range(0,50,1):
+  if (document.paragraphs[i].text)=='igsa':
+    document.paragraphs[i].text.replace('\033[1m a \033[0m')
