@@ -1,0 +1,30 @@
+for i in range(0,50,1):
+  if 'igsa' in document.paragraphs[i].text:
+    print document.paragraph
+'Some-word' in document.paragraphs[i].text
+(document.paragraphs[i].text==('igsa')):
+for par in document.paragraphs:  # to extract the whole text
+  if 'igsa' in par.text:
+     print(par.text)
+from docx import *
+
+# Open the .docx file
+document = opendocx('jkt.docx')
+
+# Search returns true if found    
+search(document,'your search string')
+for par in doc.paragraphs:
+  for par in doc.paragraphs:
+    if (par.text)=='igsa':
+      print(par.text)
+from docx import Document
+from docx.enum.text import WD_COLOR_INDEX
+
+
+document = Document('jkt.docx')
+
+
+for para in document.paragraphs:
+    for run in para.runs:
+        run.font.highlight_color = WD_COLOR_INDEX.WHITE
+document.save('jkt.docx')
